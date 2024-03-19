@@ -6,4 +6,4 @@ urotaxi_publickey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPE1RBEYehyfZYAps3tJMjA
 ami = "ami-03f4878755434977f"
 instance_shape = "t2.micro"
 db_username = "root"
-db_password = "welcome1"
+db_password = "Welcome#123"
