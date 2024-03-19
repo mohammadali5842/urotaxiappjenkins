@@ -52,7 +52,7 @@
     notify:
       - tomcatrestart 
   handlers: 
-  - name: tomcatreload ********************************
+  - name: tomcatreload *********************************
     service:
       name: tomcat
       state: reloaded
