@@ -1,5 +1,5 @@
 ---
-- name: null
+- name: urotaxiplaybook
   hosts: all
   vars:
     TOMCAT_DOWNLOAD_URL: https://downloads.apache.org/tomcat/tomcat-9/v9.0.86/bin/apache-tomcat-9.0.86.tar.gz.asc
