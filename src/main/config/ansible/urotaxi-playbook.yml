@@ -2,9 +2,9 @@
 - name: urotaxiplaybook
   hosts: all
   vars:
-    TOMCAT_DOWNLOAD_URL: https://downloads.apache.org/tomcat/tomcat-9/v9.0.86/bin/apache-tomcat-9.0.86.tar.gz.asc
-    TOMCAT_HOME_DIR: /u01/middleware/apache-tomcat-9.0.86
-  task:
+    TOMCAT_DOWNLOAD_URL: "https://downloads.apache.org/tomcat/tomcat-9/v9.0.86/bin/apache-tomcat-9.0.86.tar.gz.asc"
+    TOMCAT_HOME_DIR: "/u01/middleware/apache-tomcat-9.0.86"
+  tasks:
     - name: install jdk ********************************
       apt:
         name: openjdk-11-jdk
