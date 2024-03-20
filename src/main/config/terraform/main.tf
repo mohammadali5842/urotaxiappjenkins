@@ -4,6 +4,12 @@ terraform {
         source = "hashicorp/aws"
     }
   }
+  backend "s3" {
+    bucket = "urotaxi-tfstate-bucket"
+    region = "ap-south-1"
+    key = "terraform.tfstate"
+    dynamodb_table = "urotaxi-tfstate-locktable"
+  }
 }
 
 provider "aws" {
