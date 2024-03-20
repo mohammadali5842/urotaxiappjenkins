@@ -28,7 +28,7 @@
       unarchive:
         src: /u01/middleware/apache-tomcat-9.0.86.tar.gz
         dest: /u01/middleware
-      remote_src: true
+        remote_src: true
     - name: JAVA_HOME **********************************
       shell: readlink -f $(which java) | sed 's/bin.*//g'
       register: JDK_HOME
