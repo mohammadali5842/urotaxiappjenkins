@@ -57,9 +57,9 @@
       notify:
         - tomcatrestart
   handlers:
-    - name: tomcatreload *********************************
+    - name: tomcat reload *********************************
       service:
-        name: tomcat
+        name: tomcatreload
         state: reloaded
         enabled: true
         daemon_reload: true
