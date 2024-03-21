@@ -36,7 +36,7 @@
       register: JDK_HOME
     - name: install tomcat as a service*******************
       template:
-        src: src/main/config/ansible/tomcat.service.j2
+        src: tomcat.service.j2
         dest: /etc/systemd/system/tomcat.service
       become: yes
       become_method: sudo  
