@@ -64,17 +64,17 @@
       notify:
         - tomcatrestart
   handlers:
-    - name: tomcat reload *********************************
+    - name: tomcatreload 
       service:
-        name: tomcatreload
+        name: tomcat
         state: reloaded
         enabled: true
         daemon_reload: true
       become: yes
       become_method: sudo
-    - name: restart ********************************
+    - name: tomcatrestart 
       service:
-        name: tomcatrestart
-        state: restart
+        name: tomcat
+        state: restarted
         become: yes
         become_method: sudo
