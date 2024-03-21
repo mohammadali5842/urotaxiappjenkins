@@ -134,6 +134,7 @@ resource "aws_db_instance" "urotaxi_db" {
    ami = var.ami
    instance_type = var.instance_shape
    subnet_id = aws_subnet.urotaxipubsn1.id
+   key_name = aws_key_pair.urotaxi_kp.key_name
    tags = {
     "Name" = "urotaxiec2"
    }
