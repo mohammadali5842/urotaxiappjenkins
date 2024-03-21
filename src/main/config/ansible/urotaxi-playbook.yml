@@ -44,7 +44,7 @@
         - tomcatreload
     - name: install pymysql ******************************
       apt: 
-        name: pyrhon3-pymysql
+        name: python3-pymysql
         state: present
         update_cache: true
       become: yes
