@@ -42,7 +42,7 @@
       become_method: sudo  
       notify:
         - tomcatreload
-    - nmae: install pymysql ******************************
+    - name: install pymysql ******************************
       apt: 
         name: pyrhon3-pymysql
         state: present
