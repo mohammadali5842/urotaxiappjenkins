@@ -47,7 +47,8 @@
         name: pyrhon3-pymysql
         state: present
         update_cache: true
-      become: yesbecome_method: sudo      
+      become: yes
+      become_method: sudo      
     - name: create schema *********************************
       community.mysql.mysql_db:
         state: import
