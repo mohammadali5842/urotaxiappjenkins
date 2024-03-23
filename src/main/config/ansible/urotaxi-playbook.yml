@@ -60,7 +60,9 @@
         target: /tmp/urotaxidb.sql
         login_host: "{{ lookup('env','DB_HOST') }}"
         login_user: "{{ lookup('env','UROTAXI_DB_USER') }}"
-        login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}" 
+        login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
+      become: yes
+      become_method: sudo   
     - name: deploy ***********************************
       copy:
         src: ../target/urotaxi.war
