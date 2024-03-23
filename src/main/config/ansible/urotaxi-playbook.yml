@@ -18,6 +18,7 @@
       file:
         path: /u01/middleware
         state: directory
+        recurse: yes
         owner: ubuntu
         group: ubuntu
         mode: '0755'
