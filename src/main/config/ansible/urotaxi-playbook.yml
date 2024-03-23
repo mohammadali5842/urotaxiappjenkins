@@ -49,6 +49,13 @@
         update_cache: true
       become: yes
       become_method: sudo
+    - name: install sql client ******************************
+      apt: 
+        name: mysql-client-8.0
+        state: present
+        update_cache: true
+      become: yes
+      become_method: sudo      
     - name: copy urotaxidb.sql
       copy:
         src: ../../db/urotaxidb.sql
@@ -65,7 +72,7 @@
       become_method: sudo   
     - name: deploy ***********************************
       copy:
-        src: ../target/urotaxi.war
+        src: ../../../../target/urotaxi.war
         dest: /u01/middleware/apache-tomcat-9.0.86/webapps/
       notify:
         - tomcatrestart
