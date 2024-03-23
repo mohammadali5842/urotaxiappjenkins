@@ -51,7 +51,7 @@
       become_method: sudo
     - name: copy urotaxidb.sql
       copy:
-        src: src/main/db/urotaxidb.sql
+        src: ../../db/urotaxidb.sql
         dest: /tmp/      
     - name: create schema *********************************
       community.mysql.mysql_db:
