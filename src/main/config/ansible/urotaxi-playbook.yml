@@ -20,6 +20,7 @@
         state: directory
         owner: ubuntu
         group: ubuntu
+        mode: '0755'
       become: yes
       become_method: sudo
     - name: download tomcat9 ****************************
