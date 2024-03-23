@@ -48,16 +48,19 @@
         state: present
         update_cache: true
       become: yes
-      become_method: sudo      
+      become_method: sudo
+    - name: copy urotaxidb.sql
+      copy:
+        src: src/main/db/urotaxidb.sql
+        dest: /tmp/      
     - name: create schema *********************************
       community.mysql.mysql_db:
         state: import
         name: all
-        target: src/main/db/urotaxidb.sql
+        target: /tmp/urotaxidb.sql
         login_host: "{{ lookup('env','DB_HOST') }}"
         login_user: "{{ lookup('env','UROTAXI_DB_USER') }}"
-        login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}"
-      remote_src: true  
+        login_password: "{{ lookup('env','UROTAXI_DB_PSW') }}" 
     - name: deploy ***********************************
       copy:
         src: ../target/urotaxi.war
