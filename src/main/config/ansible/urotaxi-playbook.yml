@@ -83,7 +83,11 @@
         state: reloaded
         enabled: true
         daemon_reload: true
+      become: yes
+      become_method: sudo  
     - name: tomcatrestart 
       service:
         name: tomcat
         state: restarted
+      become: yes
+      become_method: sudo  
