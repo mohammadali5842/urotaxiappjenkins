@@ -4,6 +4,12 @@ terraform {
         source = "hashicorp/aws"
     }
   }
+  backend "s3" {
+    bucket = "urotaxi-tfstate-bucket"
+    region = "ap-south-1"
+    key = "terraform.tfstate"
+    dynamodb_table = "urotaxi-tfstate-locktable"
+  }
 }
 
 provider "aws" {
@@ -71,6 +77,12 @@ resource "aws_subnet" "urotaxiprisn3" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
    }
+    ingress {
+    from_port = "8080"
+    to_port = "8080"
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+   }
    egress {
     from_port = 0
     to_port = 0
@@ -128,6 +140,7 @@ resource "aws_db_instance" "urotaxi_db" {
    ami = var.ami
    instance_type = var.instance_shape
    subnet_id = aws_subnet.urotaxipubsn1.id
+   key_name = aws_key_pair.urotaxi_kp.key_name
    tags = {
     "Name" = "urotaxiec2"
    }
