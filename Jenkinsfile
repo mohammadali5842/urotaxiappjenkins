@@ -26,7 +26,11 @@ pipeline {
                 sh 'mvn clean test -Dmaven.test.failure.ignore=true'
             }
         }
-
+        stage('package') {
+            steps {
+                sh 'mvn clean verify --batch-mode'
+            }
+        }
         stage('infra') {
             steps {
                 sh '''
